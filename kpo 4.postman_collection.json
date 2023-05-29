@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "724154da-4ba9-4d7d-8cf7-94828fb228a6",
+		"name": "kpo 4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27669653"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"string\",\n  \"password\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/auth",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user_info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4NTMwODI1OSwianRpIjoiMDMyYjQ4NTQtY2E3ZS00YTM3LWIyNzAtN2JjYjA5ZGI4NTA2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InN0cmluZ0BhLnJ1IiwibmJmIjoxNjg1MzA4MjU5LCJleHAiOjE2ODUzMDkxNTl9.L7xLLfvpw0kbhl0Sq4xO2pVMSFsGRj_RUn7TZI6Z6Tw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/user_info",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"user_info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"string\",\n  \"email\": \"string@b.ru\",\n  \"password\": \"string\",\n  \"role\": \"manager\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dish registration",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4NTMxNzU5OSwianRpIjoiZDZjYWRhYzctZDU1Ni00MTBiLWFiZDYtNDVkYWFmOWRjZWY3IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InN0cmluZ0BiLnJ1IiwibmJmIjoxNjg1MzE3NTk5LCJleHAiOjE2ODUzMTg0OTl9.gpb7O6GzP0wQpRq6YQbPfQNqvB8Iaqt6_dX_DNFiB1g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"string\",\n  \"dish_description\": \"string\",\n  \"price\": 4,\n  \"quantity\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/dish",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"dish"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get menu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/menu",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"menu"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

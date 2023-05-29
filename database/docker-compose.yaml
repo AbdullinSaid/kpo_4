@@ -1,0 +1,26 @@
+version: "3"
+
+networks:
+  kpo:
+    external: true
+
+services:
+  db:
+    image: postgres:latest
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: db
+      APP_DB_USER: docker
+      APP_DB_PASS: docker
+    healthcheck:
+      test: PGPASSWORD='root' psql -U root --command='SELECT 1' --dbname=db
+      interval: 1s
+      timeout: 2s
+      retries: 5
+    networks:
+      - kpo
